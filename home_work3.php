@@ -19,24 +19,24 @@
                         $max1 = $num;                     
                     }
                 }
-                echo $max2;
+                return $max2;
                 // случай когда два элемента массива
             } elseif ( $count == 2) {
                     if ($max1 > $max2) {
-                        echo  $max2;
+                        return  $max2;
                     } elseif ($max1 < $max2) {
-                        echo  $max1 ;
+                        return  $max1 ;
                     } else {
-                        echo 'Numbers are equal';
+                        return 'Numbers are equal';
                 }
                 // случай когда элемент 1
             } else {
-                echo $max1;
+                return $max1;
             }
         }
         
         $arr = [12, 11, 2, 33, 55, 88 ];
-        array_second_num($arr);
+        echo array_second_num($arr);
         
         
         
@@ -47,9 +47,9 @@
        {
            // переменная для хранения и вывода значений (массив)
            $array = [];
-           foreach ($arr1 as  $item) {
-            // поиск значения в массиве
-               if (array_search($item, $arr2) == false) {
+           foreach ($arr1 as $key => $item) {
+            // поиск значения в массиве $arr2 
+               if ($arr2[$key] !== $item) {
             // запись значений которые отсутствуют в массиве $arr2
                    $array[] = $item;
                }
